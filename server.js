@@ -2,19 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
-
-app.get('/health', (req, res) => {
-  res.json({ status: 'ok' });
-});
-
 app.get('/api/jobs', (req, res) => {
-  // TODO: implement job scraping logic
-  res.json({ jobs: [] });
-});
-
-app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
+  res.json({ status: 'ok', message: 'Jobs endpoint' });
 });
 
 app.listen(PORT, () => {
